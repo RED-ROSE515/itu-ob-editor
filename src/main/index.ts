@@ -1,6 +1,9 @@
 import * as path from "path";
 import { app as electronApp } from "electron";
 
+// Disable hardware acceleration before app is ready
+electronApp.disableHardwareAcceleration();
+
 import { MainConfig } from "@riboseinc/coulomb/config/main";
 import { initMain } from "@riboseinc/coulomb/app/main";
 
@@ -34,6 +37,9 @@ export const conf: MainConfig<typeof appConf> = {
       options: {
         workDir: path.join(appDataPath, "ituob-data"),
         fsWrapperClass: FSWrapper,
+        username: "itu-ob-editor",
+        authorName: "ITU OB Editor",
+        authorEmail: "open.source@ribose.com",
       },
     },
   },
@@ -79,5 +85,5 @@ export const conf: MainConfig<typeof appConf> = {
 export const app = initMain(conf);
 
 electronApp.on("ready", () => {
-  initMain(conf);
+  // Remove duplicate initMain call
 });

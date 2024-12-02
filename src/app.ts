@@ -17,8 +17,6 @@ export const defaultISSN = "1564-5223";
 export const availableLanguages = AvailableLanguages;
 
 export const conf: AppConfig = {
-  // appName: "ITU OB Editor",
-  // keytarService: "itu-ob-editor",
   data: {
     issues: {
       shortName: "OB",
@@ -80,4 +78,5 @@ export const conf: AppConfig = {
     },
   },
   settingsWindowID: "settings",
+  forceDevelopmentMode: process.env.NODE_ENV !== "production",
 };

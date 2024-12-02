@@ -1,6 +1,6 @@
 import moment from "moment";
 
-import { ipcRenderer, shell } from "electron";
+import { ipcRenderer } from "electron";
 
 import React, { useEffect, useState } from "react";
 import { Icon } from "@blueprintjs/core";

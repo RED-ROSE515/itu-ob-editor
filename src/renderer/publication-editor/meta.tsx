@@ -6,10 +6,7 @@ import {
   NonIdealState,
 } from "@blueprintjs/core/lib/esm";
 import { LangConfigContext } from "@riboseinc/coulomb/localizer/renderer/context";
-import {
-  GenericValidationErrorsNotice,
-  ValidationErrorsNotice,
-} from "renderer/form-validation";
+import { GenericValidationErrorsNotice } from "renderer/form-validation";
 import { Publication } from "models/publications";
 import { EditorViewProps } from "./types";
 import styles from "./styles.scss";
@@ -36,9 +33,7 @@ const EditPublicationMeta: React.FC<MetaEditorProps> = function ({
     );
   }
 
-  const ValidationErr = GenericValidationErrorsNotice as ValidationErrorsNotice<
-    typeof validators
-  >;
+  const ValidationErr = GenericValidationErrorsNotice;
 
   return (
     <div className={styles.publicationMetaEditor}>
